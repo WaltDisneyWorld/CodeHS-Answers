@@ -1,0 +1,10 @@
+function safe(){
+    if (facingSouth()){
+        turnLeft();
+        
+    }
+}    
+function start(){
+    safe();
+    move();
+}
