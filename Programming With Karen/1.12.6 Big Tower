@@ -1,0 +1,33 @@
+function start(){
+    chekNorth();
+    chekSouth();
+    chekEast();
+    chekWest();
+    while (frontIsClear()){
+        move();
+        putBall();
+    }
+}
+function chekNorth(){
+    if(facingNorth()){
+        putBall();
+    }
+}
+function chekSouth(){
+    if(facingSouth()){
+        turnAround();
+        putBall();
+    }
+}
+function chekEast(){
+    if(facingEast()){
+        turnLeft();
+        putBall();
+    }
+}
+function chekWest(){
+    if(facingWest()){
+        turnRight();
+        putBall();
+    }
+}
