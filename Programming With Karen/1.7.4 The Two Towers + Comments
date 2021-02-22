@@ -1,0 +1,44 @@
+/*This program makes 
+ *Karol make Towers and at
+ *the end she is om top of the
+ *second tower
+ */
+function start(){
+	move();
+	tower(); 
+	turnRight();
+	move();
+	turnRight();
+	move();
+	move();
+	turnLeft();
+	move();
+	tower();
+	move();
+	turnRight();
+	
+	
+}
+/* Preaction:Karol is on the 
+ * the floor 
+ *Afteraction:She makes the tower
+ */
+function tower(){
+    turnLeft();
+    putBall();
+    move();
+    putBall();
+    move();
+    putBall();
+}
+
+
+
+
+ /*Karol is turning right
+ */
+function turnRight(){
+    turnLeft(); 
+    turnLeft();
+    turnLeft();
+}
