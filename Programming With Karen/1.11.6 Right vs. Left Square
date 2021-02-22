@@ -1,0 +1,21 @@
+function start() {
+    makeRightSquare();
+}
+function makeRightSquare(){
+    if(facingEast()){
+        for (var i=0; i<4;i++){
+            putBall();
+            move();
+            turnLeft();
+        }
+    } else {
+        makeLeftSquare();
+    }
+}
+function makeLeftSquare(){
+    for(var i=0;i<4;i++){
+        putBall();
+        move();
+        turnRight();
+    }
+}
