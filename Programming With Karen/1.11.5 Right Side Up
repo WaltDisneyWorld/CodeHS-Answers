@@ -1,0 +1,11 @@
+function start(){
+	chek();
+}
+function chek (){
+    if (facingSouth()){
+        turnLeft();
+    }else{
+        turnLeft();
+        turnLeft();
+    }
+}
