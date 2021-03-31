@@ -1,0 +1,8 @@
+/* Write a program that asks the user how far they ran (in miles)
+ * and then how long it took them (in minutes), and print out
+ * their speed in miles per hour. */
+function start(){
+	var miles = readInt("miles to run");
+	var time = readInt("minutes to run");
+	println("Speed in mph:" + miles / ( time / 60 ) );
+}
