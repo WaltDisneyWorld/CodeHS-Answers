@@ -1,0 +1,29 @@
+//BRUH
+function start() {
+    fetch();
+    returnBall();
+}
+
+
+function fetch(){
+    turnLeft();
+    for(var i=0; i<4; i++){
+        move();
+    }
+    turnRight();
+    move();
+    move();
+    takeBall();
+}
+
+function returnBall(){
+    turnAround();
+    move();
+    move();
+    turnLeft();
+    for(var i=0; i<4; i++){
+        move();
+    }
+    putBall();
+    turnLeft();
+}
