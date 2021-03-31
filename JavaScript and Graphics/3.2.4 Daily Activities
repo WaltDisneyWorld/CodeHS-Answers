@@ -1,0 +1,13 @@
+function start(){
+	var partOfDay = "morning";
+	var time=8;
+	println("In the " + partOfDay + " , I go to the batroom at " + time);
+
+	partOfDay = "afternoon";
+	time = 12;
+	println("In the " + partOfDay + " , I play ball at " + time);
+	
+	partOfDay = "evening";
+	time = 12;
+	println("In the " + partOfDay + " , I talk at " + time);
+}
