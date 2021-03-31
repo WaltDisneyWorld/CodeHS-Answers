@@ -1,0 +1,6 @@
+function start(){
+var enoughCredits= readBoolean(" HAve Credits?");
+var requirments = readBoolean("Do you meat the requirments?");
+var gradutae = enoughCredits && requirments; 
+println (" Can you graduate? "  +  gradutae);
+}
