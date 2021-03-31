@@ -1,0 +1,6 @@
+function start(){
+	var doubles1 = readInt ( "What is your number?");
+	var doubles2 = readInt ( "What is you number? ");
+	var rolledDoubles = doubles1==doubles2;
+	println ("Your two values are equall:" + rolledDoubles);
+}
