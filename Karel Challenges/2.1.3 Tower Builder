@@ -1,0 +1,29 @@
+function start() {
+    oddTower();
+    while(frontIsClear()){
+        if(frontIsClear()){
+            move();
+        }
+        oddTower();
+    }
+}
+function oddTower(){
+    turnLeft();
+    putBall();
+    move();
+    putBall();
+    move();
+    putBall();
+    decend();
+}
+
+function decend(){
+    turnAround();
+    move();
+    move();
+    turnLeft();
+    if(frontIsClear()){
+        move();
+    }
+}
+//DOC I HATE U
