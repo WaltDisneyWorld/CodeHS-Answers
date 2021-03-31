@@ -1,0 +1,58 @@
+function start() {
+    while(leftIsBlocked()){
+        pickupBalls();
+    }	
+    
+    if(frontIsBlocked()){
+        pickupBalls();
+        while(frontIsClear()){
+            pickupBalls();
+            moveUpRow();
+        }
+    }else{
+        while (frontIsClear()){
+            pickupBalls();
+            moveUpRow();
+        }
+        
+        
+        if(ballsPresent()){
+            takeBall();
+            pickupBalls();
+        }else{
+            pickupBalls();
+        }
+    }
+}
+//This function will sweep the avenue and pickup balls it finds.
+function pickupBalls(){
+    if(ballsPresent()){
+        takeBall();
+    }
+    turnLeft();
+    while(frontIsClear()){
+        move();
+        if(ballsPresent()){
+            takeBall();
+        }
+    }
+}
+
+//This function will return Karel to the starting position on next avenue.
+function moveUpRow(){
+    turnRight();
+    
+    if(frontIsClear()){
+        move();
+        turnRight();
+    }
+    while(frontIsClear()){
+        move();
+    }
+    turnLeft();
+}
+
+function clean(){
+    pickupBalls();
+    moveUpRow();
+}
