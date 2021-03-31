@@ -1,0 +1,20 @@
+var SHNITZEL = 420;
+function start(){
+	setTimer(bruh, 20);
+	var sup = new Line (0,0,0,0);
+	add(sup);
+	var solid = new Circle(1);
+	solid.setPosition (0,0);
+	add(solid);
+	var lit = new Rectangle (1,1);
+	lit.setPosition(0,0);
+	add(lit);
+}
+
+function bruh(){
+    var sick = new Circle(SHNITZEL);
+    sick.setPosition(getWidth()/2, getHeight()/2);
+    sick.setColor(Randomizer.nextColor());
+    add(sick);
+    
+}
