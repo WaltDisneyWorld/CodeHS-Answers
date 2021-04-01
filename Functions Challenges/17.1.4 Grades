@@ -1,0 +1,36 @@
+function start(){
+	// Write your code here
+    grades(87);
+}
+
+function grades(x){
+    if (x>=97){
+        x = "A+";
+    }else if(x >= 93  x<97){
+        x = "A";
+    }else if(x >= 90 && x<93){
+        x = "A-";
+    }else if(x >= 87 && x<90){
+        x = "B+";
+    }else if(x >= 83 && x<87 ){
+        x = "B";
+    }else if(x >= 80 && x<83){
+        x = "B-";
+    }else if(x >= 77 && x<80){
+        x = "C+";
+    }else if(x >= 73 && x<77){
+        x = "C";
+    }else if(x >= 70 && x<73){
+        x = "C-";
+    }else if(x >= 67 && x<70){
+        x = "D+";
+    }else if(x >= 63 && x<67){
+        x = "D";
+    }else if(x >= 60 && x<63){
+        x = "D-";
+    }else if(x < 60){
+        x = "F";
+    }
+    println(x);
+    
+}
