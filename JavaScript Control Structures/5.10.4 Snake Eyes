@@ -1,0 +1,20 @@
+function start(){
+    var numRoll = 0;
+    while(true){
+        var a = Randomizer.nextInt(1,6);
+        var b = Randomizer.nextInt(1,6);
+        
+        println("Rolled: " + a + " " + b);
+        
+        numRoll++;
+        
+        if (a == b) 
+        {
+            println("It took you " + numRoll+ " rolls to get snake eyes");
+            break;
+            
+        }
+    
+    
+    }
+}
