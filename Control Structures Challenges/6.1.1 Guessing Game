@@ -1,0 +1,32 @@
+var MINIMUM = 0;
+var MAX = 100;
+var WIN = Randomizer.nextInt(MINIMUM, MAX);
+function start(){
+
+println("This program plays a guessing game.");     
+println("The computer is thinking of a value between 0 and 100.");    
+println("Type -1 to exit the program");
+
+while (true){
+    var num = readInt("What is your guess?");
+    if (num>WIN){
+        println("Your guess was too high.");
+    }else{
+        
+        if(num == -1){
+            println("game has concluded.");
+            break;
+        }else{
+        if(num<WIN){
+            println("Your guess was too low. ");
+        }else{
+            if(num == WIN){
+                println("You have won!");
+                break;
+            }
+        }
+            
+        }
+    }
+}
+}
