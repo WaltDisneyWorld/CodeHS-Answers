@@ -1,0 +1,9 @@
+function start(){
+var age = readInt("what is your age?");
+if (age>=13 && age<=19 ){
+    println("yes you are a teenager");
+    }else{
+        println("you are not a teenager");
+        
+    }
+}
