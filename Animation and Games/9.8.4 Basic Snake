@@ -1,0 +1,52 @@
+var SNAKE_WIDTH = 40;
+var SNAKE_HEIGHT = 40;
+var SNAKE_COLOR = Color.green;
+var snake;
+var x;
+var y;
+// Constants to represent the dircetions 
+var EAST = 0;
+var SOUTH = 1;
+var WEST = 2;
+var NORTH = 3;
+
+
+function start(){
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    
+    
+    snake = new Rectangle(40, 40);
+    snake.setColor (Color.green);
+    snake.setPosition (centerX-20,centerY-20 );
+    add(snake);
+    
+    setTimer(move,50);
+
+
+}
+ function move(){
+     snake.move(x,y);
+     keyDownMethod(direction);
+}
+x = 5;
+y = 0;
+function direction(e){
+    if(e.keyCode == Keyboard.LEFT){
+        x = -5;
+        y = 0;
+    }
+    if (e.keyCode == Keyboard.UP){
+        x = 0;
+        y = -5;
+        
+    }
+    if (e.keyCode == Keyboard.DOWN){
+        x = 0;
+        y = 5;
+    }
+    if (e.keyCode == Keyboard.RIGHT){
+        x = 5;
+        y = 0;
+    }
+}
