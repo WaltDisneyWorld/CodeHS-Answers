@@ -1,0 +1,32 @@
+// Constants
+var WIDTH = 50;
+var HEIGHT = 20;
+var x = 0;
+var y = getHeight();
+
+
+function start() {
+   setTimer(drawBrick, 50);
+   
+}
+
+function drawBrick(){
+    
+    
+    var brick = new Rectangle(WIDTH, HEIGHT);
+    brick.setPosition(x, y - HEIGHT);
+    brick.setColor(Color.randomRed());
+    add(brick);
+    
+    
+    
+    x+=WIDTH;
+    
+    if(x - WIDTH == getWidth()){
+        y-=HEIGHT;
+        x=0;
+    }
+    if (x - WIDTH == getWidth() && y - HEIGHT == getHeight()){
+        stopTimer(drawBrick);
+    }
+}
