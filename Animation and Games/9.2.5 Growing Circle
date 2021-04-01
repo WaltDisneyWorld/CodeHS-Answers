@@ -1,0 +1,32 @@
+/* Constants */
+var START_RADIUS = 1;
+var INCREMENT = 1;
+var CHANGE_COLORS_AT = 10;
+var circle;
+function start(){
+  drawCircle();
+  setTimer(expandCircle, 50);
+  
+}
+function drawCircle(){
+    circle = new Circle(START_RADIUS);
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    circle.setPosition(centerX,centerY);
+    
+}
+
+function expandCircle (){
+    var radii = 0;
+    var radiusNow = circle.getRadius();
+    if(radiusNow * 2<getHeight()){
+        radii = radiusNow + INCREMENT;
+        radiusNow = radii;
+        circle.setRadius(radiusNow);
+    }else{
+        stopTimer(expandCircle);
+    }
+    if (radiusNow % CHANGE_COLORS_AT == 0){
+        circle.setColor(Randomizer.nextColor());
+    }
+}
