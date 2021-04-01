@@ -1,0 +1,20 @@
+var RADIUS = 100;
+
+function start(){
+	var ball = new Circle(RADIUS);
+	setTimer(randomPlaceColor, 100);
+
+}
+function randomPlaceColor(){
+  var posX = Randomizer.nextInt(0, getWidth());
+  var posY = Randomizer.nextInt(0, getHeight());
+  var ball = new Circle(RADIUS);
+  ball.setPosition(posX, posY);
+  ball.setColor(Randomizer.nextColor());
+  add(ball);
+    
+
+
+
+
+}
