@@ -1,0 +1,24 @@
+function start(){
+	// Write your code here
+var n = 0;
+var x = readInt("Enter number: ");
+even(x);
+}
+
+
+function even(x){
+    var n = x;
+    while(n>1){
+        
+        if(n<=1){
+            break;
+        }
+        
+        if(n % 2 == 0){
+            n/=2;
+        }else{
+            n = n * 3 + 1;
+        }
+        println(n);
+    }
+}
