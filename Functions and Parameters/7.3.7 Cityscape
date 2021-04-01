@@ -1,0 +1,62 @@
+var POLE_WIDTH = 5;
+var LIGHT_RADIUS = 10;
+
+function start(){
+drawBuilding(50, 200, 50);
+
+drawBuilding(100, 300, 125);
+
+drawBuilding(50, 150, 200);
+
+drawBuilding(100, 350, 275);
+
+drawPoles(100, 300, 125);
+
+drawPoles(100, 350, 275);
+}
+
+
+//var POLE_WIDTH = 5;
+//var LIGHT_RADIUS = 10;
+//var LIGHT_REQUIRED_HEIGHT = 200;
+
+//function start(){
+//	drawBuilding(50, 200, 50);
+//	drawBuilding(100, 300, 125);
+//	drawBuilding(50, 150, 200);
+//	drawBuilding(100, 350, 275);
+
+	// Add some more buildings!
+
+function drawBuilding(width, height, xPosition){
+var rect = new Rectangle(width, height);
+rect.setPosition(xPosition - width / 2, getHeight() - height);
+add(rect);
+}
+
+function drawPoles(width, height, xPosition){
+
+var rect = new Rectangle(POLE_WIDTH, height / 6);
+rect.setPosition(xPosition - POLE_WIDTH / 2, getHeight() - height - height / 6);
+add(rect);
+
+
+var circle = new Circle(LIGHT_RADIUS);
+circle.setPosition(xPosition, getHeight() - height - height / 6);
+circle.setColor(Color.green);
+add(circle);
+}
+
+// function drawBuilding(width, height, xPosition){
+//	var build = new Rectangle(width, height);
+//	build.setPosition(xPosition - width/2, getHeight() - height);
+//	add(build);
+	
+//	if (build.getHeight()> LIGHT_REQUIRED_HEIGHT){
+//	var stick = new Rectangle(POLE_WIDTH , build.getHeight()/6);
+//	stick.setPosition( build.getWidth()/2, getHeight()-build.getHeight() + build.getHeight());
+//	add(stick);
+	
+//	var ball = new Circle (LIGHT_RADIUS);
+//	ball.setPosition(stick.getX()+stick.getWidth()/2, stick.getY());
+//	add(ball);
