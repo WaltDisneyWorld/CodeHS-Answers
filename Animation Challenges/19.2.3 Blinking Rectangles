@@ -1,0 +1,17 @@
+var NUM_RECTANGLES_ACROSS = 4;
+var NUM_RECTANGLES_DOWN = 10;
+
+function start() {
+    var newGrid = new Grid(NUM_RECTANGLES_DOWN,NUM_RECTANGLES_ACROSS);
+	mouseMoveMethod(litrect);
+}
+
+
+
+
+function litrect(e){
+    var rect = new Rectangle(getWidth() / 4, getHeight() / 10);
+    rect.setColor(Randomizer.nextColor());
+    rect.setPosition(e.getX(), e.getY());
+    add(rect);
+}
