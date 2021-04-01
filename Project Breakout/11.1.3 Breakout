@@ -1,0 +1,69 @@
+/* Constants for bricks */
+var NUM_ROWS = 8;
+var BRICK_TOP_OFFSET = 10;
+var BRICK_SPACING = 2;
+var NUM_BRICKS_PER_ROW = 10;
+var BRICK_HEIGHT = 10;
+var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
+var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
+var dx = 4;
+var dy = 4;
+var ball;
+var counter = 0;
+var x = BRICK_SPACING;
+var y = BRICK_TOP_OFFSET;
+var paddle;
+/* Constants for ball and paddle */
+var PADDLE_WIDTH = 80;
+var PADDLE_HEIGHT = 15;
+var PADDLE_OFFSET = 10;
+
+var BALL_RADIUS = 15;
+
+function start(){
+   ball = new Circle(20);
+   ball.setColor(Color.black);
+   ball.setPosition(getWidth()/2, getHeight()/2); 
+   add(ball);
+   row();
+   bruh();
+    
+}
+
+function bruh(){
+    paddle = new Rectangle(PADDLE_WIDTH, PADDLE_HEIGHT);
+    paddle.setPosition(getWidth()/2 - PADDLE_WIDTH/2, getHeight() - PADDLE_HEIGHT - PADDLE_OFFSET);
+    add(paddle);
+    
+}
+
+function xAxis(e){
+    paddle.setPosition(e.getX() - PADDLE_WIDTH, e.getY() - PADDLE_HEIGHT - PADDLE_OFFSET) ;
+}
+
+function row(){
+    while(counter < NUM_BRICKS_PER_ROW * NUM_ROWS){
+        var brick = new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+        brick.setPosition(x,y);
+        
+        if(counter >= NUM_BRICKS_PER_ROW * 6){
+            brick.setColor(Color.blue);
+        }else if(counter >= NUM_BRICKS_PER_ROW * 4){
+            brick.setColor(Color.green);
+        }else if(counter >= NUM_BRICKS_PER_ROW * 2){
+            brick.setColor(Color.orange);
+        }else{
+            brick.setColor(Color.red);
+        }
+        
+        add(brick);
+        x+=BRICK_WIDTH + BRICK_SPACING;
+        counter++;
+        
+        if(counter % NUM_BRICKS_PER_ROW == 0){
+            x = BRICK_SPACING;
+            y += BRICK_HEIGHT + BRICK_SPACING;
+        }
+    }
+
+}
