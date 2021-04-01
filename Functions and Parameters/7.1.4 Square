@@ -1,0 +1,7 @@
+function start(){
+	square(4);
+}
+function square(x){
+    var squaredNum = x * x;
+    println (squaredNum);
+}
