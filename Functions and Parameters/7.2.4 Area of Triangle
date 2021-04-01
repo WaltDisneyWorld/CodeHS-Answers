@@ -1,0 +1,9 @@
+function start(){
+
+    triangleArea(5,6);
+}
+
+function triangleArea(x,y){
+    var AREA = 1/2 * x * y;
+    println(AREA);
+}
