@@ -1,0 +1,29 @@
+ // Constants
+ var CIRCLES_PER_SPLATTER = 20;
+ var MIN_RADIUS = 5;
+ var MAX_RADIUS = 25;
+ var DELAY = 500;
+ var circle;
+
+/* This program creates a paint splatter.
+ * It's art. */
+function start(){
+    setTimer(splatter, DELAY);
+    
+
+}
+function paint(){
+    var radius = Randomizer.nextInt(MIN_RADIUS, MAX_RADIUS);
+    var circle = new Circle (radius);
+    var posX = Randomizer.nextInt(0,getWidth());
+    var posY = Randomizer. nextInt(0,getHeight());
+    circle.setPosition(posX, posY);
+    circle.setColor(Randomizer.nextColor());
+    add(circle);
+}
+
+function splatter(){
+    for(var i = 0; i<CIRCLES_PER_SPLATTER; i++){
+        paint();
+    }
+}
