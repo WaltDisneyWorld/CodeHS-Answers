@@ -1,0 +1,71 @@
+var cakeWidth = getWidth() / 2;
+var cakeHeight = getHeight() / 4;
+var frostingRadius = cakeWidth / 20;
+var topFrostingX = cakeWidth / 2;
+var topFrostingY = cakeHeight * 1.5;
+var botFrostingX = cakeWidth / 2;
+var botFrostingY = cakeHeight * 2.5;
+var candleWidth = cakeWidth / 20;
+var candleHeight = cakeHeight / 3;
+var candleX = topFrostingX * 2.05;
+var CENTER_X = getWidth()/2 ;
+var userAge = readInt("How old are you? ");
+var counter = 0;
+function start() {
+    drawCake();
+    drawPlate();
+    drawCandles();
+    drawFrosting();
+    happyBirthday();
+}
+function drawCake() {
+    var cake = new Rectangle(cakeWidth, cakeHeight);
+    cake.setPosition(cakeWidth / 2, cakeHeight * 1.5);
+    cake.setColor(Randomizer.nextColor());
+    add(cake);
+}
+function drawPlate() {
+    var plate = new Rectangle(cakeWidth * 1.2, cakeHeight / 5);
+    plate.setPosition(cakeWidth / 2.5, cakeHeight * 2.5);
+    plate.setColor(Randomizer.nextColor());
+    add(plate);
+}
+function drawCandles() {
+    for(var i = 0; i < userAge; i++) {
+        counter++
+        if(counter % 2 == 0) {
+            var candle = new Rectangle(candleWidth, candleHeight);
+            candle.setPosition(CENTER_X - candleWidth - candleWidth * i, cakeHeight * 1.5 - candleHeight);
+            candle.setColor(Randomizer.nextColor());
+            add(candle);
+        }
+        if(counter % 2 != 0) {
+            var candle = new Rectangle(candleWidth, candleHeight);
+            candle.setPosition(CENTER_X + candleWidth * i, cakeHeight * 1.5 - candleHeight);
+            candle.setColor(Randomizer.nextColor());
+            add(candle);
+        }
+    }
+}
+function drawFrosting() {
+    for(var i = 0; i < 11; i++){
+        var frostingTop = new Circle(frostingRadius);
+        frostingTop.setPosition(topFrostingX, cakeHeight * 1.5);
+        frostingTop.setColor(Randomizer.nextColor());
+        add(frostingTop);
+        
+        var frostingBot = new Circle(frostingRadius);
+        frostingBot.setPosition(botFrostingX, cakeHeight * 2.5);
+        frostingBot.setColor(Randomizer.nextColor());
+        add(frostingBot);
+        
+        topFrostingX = topFrostingX + frostingRadius * 2
+        botFrostingX = botFrostingX + frostingRadius * 2
+    }
+}
+function happyBirthday() {
+    var txt = new Text("Happy Birthday!", "20pt Arial");
+    txt.setPosition(100, 250);
+    txt.setColor(Color.black);
+    add(txt);
+}
