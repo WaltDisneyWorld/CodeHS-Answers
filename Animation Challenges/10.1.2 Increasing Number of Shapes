@@ -1,0 +1,31 @@
+var DELAY = 1000;
+var CIRCLE_RADIUS = 25;
+var BUFFER = 50;
+var SIDE_LENGTH = 50;
+
+var numShapes = 1;
+
+function start() {
+    setTimer(draw, DELAY);
+}
+
+
+function draw(){
+    if (numShapes % 2 != 0){
+        for(var i = 0; i < numShapes; i++){
+           var circle = new Rectangle(50, 50) ;
+           circle.setPosition(Randomizer.nextInt(0, getWidth() - BUFFER), Randomizer.nextInt(0, getHeight() - 50) );
+           circle.setColor(Randomizer.nextColor());
+           add(circle)
+        }
+    }else if (numShapes % 2 == 0){
+        for(var i = 0; i < numShapes; i++){
+            var square = new Circle(CIRCLE_RADIUS);
+            square.setPosition(Randomizer.nextInt(0, getWidth() - BUFFER), Randomizer.nextInt(0, getHeight() - 50) );
+            square.setColor(Randomizer.nextColor());
+            add(square)
+        }
+    }
+    
+    numShapes++
+}
