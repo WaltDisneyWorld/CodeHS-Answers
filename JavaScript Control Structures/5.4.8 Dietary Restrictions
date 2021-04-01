@@ -1,0 +1,13 @@
+function start(){
+	var diet = readLine ( "what is your dietary restriction?");
+	if (diet== "lactose intolerant" ){
+	    println ("No cheese");
+	   }
+	if ( diet=="vegetarian"){
+	    println("Veggie burger");
+	   	}
+	if (diet=="none"){
+	    println("No alterations");
+	}
+	
+}
