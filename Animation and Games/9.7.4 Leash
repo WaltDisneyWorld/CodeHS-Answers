@@ -1,0 +1,23 @@
+var BALL_RADIUS = 30;
+var ball;
+var line;
+var x;
+var y;
+function start() {
+	x = getWidth();
+	y = getHeight();
+	
+	
+	ball = new Circle(BALL_RADIUS);
+	line = new Line(x/2,y/2,x/2,y/2);
+	ball.setPosition(x/2,y/2);
+	add(ball);
+	add(line);
+	mouseMoveMethod(move);
+}
+
+
+function move(e){
+    line.setEndpoint(e.getX(), e.getY());
+    ball.setPosition(e.getX(), e.getY());
+}
