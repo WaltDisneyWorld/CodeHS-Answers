@@ -1,0 +1,25 @@
+function start() {
+    var width = readInt("What is the width of the mat (in feet)? ");
+    var length = readInt ("What is the length of the mat (in feet)? ");
+    println(" The area of each mat is " + calculateArea(width, length) + " square feet. ");
+    var matZ = calculateArea( width, length);
+    
+    
+    width = readInt("What is the width of the room (in feet)? ");
+    length = readInt("What is the length of the room (in feet)?");
+    println( "The area of the room is " + calculateArea(width, length) + " square feet. ");
+    var roomZ = calculateArea( width, length);
+    
+    
+    println("You'll need " + (roomZ / matZ) + " mats to cover the floor. ");
+}
+
+
+// This function should calculate the area of a rectangle using
+// the parameters of width and length.
+function calculateArea(width, length){
+ var area =  width  *  length;
+ return area;
+ 
+    
+}
