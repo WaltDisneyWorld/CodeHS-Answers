@@ -1,0 +1,9 @@
+function start() {
+ verticalLine(60,80);
+ 
+}
+
+function verticalLine(length,position){
+    var line = new Line(length,0,length,position);
+    add(line);
+}
