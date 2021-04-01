@@ -1,0 +1,28 @@
+var LIGHT_RADIUS = 35;
+var STOPLIGHT_WIDTH = 120;
+var STOPLIGHT_HEIGHT = 350;
+var DIST_BETWEEN_LIGHTS = 100;
+var GRAY_COLOR = "#737071";
+
+function start(){
+    stopLight();
+    light(LIGHT_RADIUS, getWidth()/2, getHeight()/2, Color.YELLOW);
+    light(LIGHT_RADIUS, getWidth()/2, getHeight()/2 + DIST_BETWEEN_LIGHTS, Color.GREEN);
+    light(LIGHT_RADIUS, getWidth()/2, getHeight()/2 - DIST_BETWEEN_LIGHTS, Color.RED);
+    
+}
+
+function stopLight(){
+    var rect = new Rectangle (STOPLIGHT_WIDTH, STOPLIGHT_HEIGHT);
+    rect.setPosition(getWidth()/2 - STOPLIGHT_WIDTH / 2 , getHeight()/2 - STOPLIGHT_HEIGHT / 2);
+    rect.setColor(GRAY_COLOR);
+    add(rect);
+}
+
+
+function light(radius, x,y, color){
+    var circle = new Circle (radius);
+    circle.setPosition(x,y);
+    circle.setColor(color);
+    add(circle);
+}
