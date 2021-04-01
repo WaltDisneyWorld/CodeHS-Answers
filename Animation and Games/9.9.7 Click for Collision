@@ -1,0 +1,43 @@
+var blueCircle;
+var redCircle;
+var RADIUS = 25;
+var DX_RED = 6;
+var DX_BLUE = 4;
+var DELAY = 40;
+
+function start(){
+    blueCircle = new Circle (RADIUS);
+    redCircle = new Circle(RADIUS);
+    
+    
+    blueCircle.setPosition(50, getHeight()/2);
+    redCircle.setPosition(getWidth()/2, getHeight()/2);
+    
+    blueCircle.setColor(Color.blue);
+    redCircle.setColor(Color.red);
+    
+    add(blueCircle);
+    add(redCircle);
+    
+    setTimer(collision, DELAY);
+    
+}
+
+function collision(){
+    mouseClickMethod(pause);
+    
+    blueCircle.move(DX_BLUE, 0);
+    if(blueCircle.getX() +RADIUS>=getWidth()/2 - RADIUS){
+        redCircle.move(DX_RED,0);
+        
+    }
+}
+
+function pause(){
+    stopTimer(collision);
+    mouseClickMethod(resume);
+}
+
+function resume(){
+    setTimer(collision, DELAY);
+}
