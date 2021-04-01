@@ -1,0 +1,10 @@
+var n = 5;
+var factoral = 1; 
+function start(){
+    var n = readInt( "Number"); 
+    for (var i = n; i >= 1; i--){
+          factoral *= i;  
+            
+        }
+    println(factoral);
+}
