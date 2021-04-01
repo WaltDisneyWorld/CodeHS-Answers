@@ -1,0 +1,13 @@
+function start(){
+	var x = max(4,5);
+	println(x);
+}
+
+function max(x,y){
+    if(x>y){
+        var m = x;
+    }else{
+        var m = y;
+    }
+    return m;
+}
