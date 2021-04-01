@@ -1,0 +1,8 @@
+var SIDE_LENGTH = 100;
+
+function start(){
+	var rect = new Rectangle (100, 100);
+	rect.setPosition(getWidth() / 2, getHeight()  / 2 );
+	Randomizer.nextColor();
+	add (rect);
+}
