@@ -1,0 +1,8 @@
+function start(){
+    triple (5);
+    
+}
+function triple(x){
+    var tripleX = 3 * x;
+    return tripleX;
+}
