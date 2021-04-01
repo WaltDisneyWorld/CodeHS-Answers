@@ -1,0 +1,35 @@
+// Constants
+var RADIUS = 20;
+var DELAY = 40;
+var x = RADIUS;
+var y = RADIUS;
+var i = 1;
+// Define your global variables here
+
+function start(){
+    setTimer(drawCircle,DELAY);
+    
+}
+
+function drawCircle(){
+    
+    var circle = new Circle(RADIUS);
+    circle.setPosition(x,y);
+    if(i % 2 ==0){
+        circle.setColor(Color.black);
+        
+    }else{
+        circle.setColor(Color.red);
+        
+    }
+    add(circle);
+    x += RADIUS*2;
+    i++;
+    if(x - RADIUS == getWidth()){
+        y += RADIUS * 2;
+        x = RADIUS;
+    }
+    if(x - RADIUS == getWidth() && y + RADIUS == getHeight()){
+        stopTimer(drawCircle);
+    }
+}
