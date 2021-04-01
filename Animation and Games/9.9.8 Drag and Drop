@@ -1,0 +1,29 @@
+var NUM_CIRCLES = 3;
+var RADIUS = 30;
+var circle; 
+function start(){
+	drawCircles();
+	mouseDragMethod(cronch);
+	// Add your drag and drop code
+}
+
+// This function draws a number of random colored circles at random points 
+// on the screen based on the variable NUM_CIRCLES
+function drawCircles() {
+	for (var i = 0; i < NUM_CIRCLES; i++) {
+		var circle = new Circle(RADIUS);
+		var x = Randomizer.nextInt(RADIUS, getWidth() - RADIUS);
+		var y = Randomizer.nextInt(RADIUS, getHeight() - RADIUS);
+		circle.setPosition(x, y);
+		circle.setColor(Randomizer.nextColor());
+		add(circle);
+	}
+}
+
+function cronch(e){
+    var drag = getElementAt(e.getX(), e.getY());
+    if(drag!=null){
+        mouseDownMethod(circle.move(0,5));
+        mouseUpMethod(circle.move(0,-5));
+    }
+}
