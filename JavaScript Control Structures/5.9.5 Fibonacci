@@ -1,0 +1,14 @@
+var MAX = 1000;
+var MIN = 0;
+function start(){
+    var first = 0;
+    var second = 1;
+    println(second);
+    
+while (first + second <= MAX){
+        var third = first + second;
+        first = second;
+        second = third;
+        println(second);
+    }
+}
