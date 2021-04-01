@@ -1,0 +1,39 @@
+// This program draws a target that follows the mouse
+var ball;
+    ball = new Circle(20);
+    ball.setColor(Color.red);
+
+
+function start(){
+	mouseMoveMethod(arrow);
+	mouseClickMethod(balls);
+}
+
+function arrow(e){
+    var line = new Line(getWidth()/2, 0, getWidth()/2, getHeight());
+    var segment = new Line(0, getHeight()/2, getWidth(), getHeight()/2);
+    line.setLineWidth(10);
+    segment.setLineWidth(10);
+    add(line);
+    add(segment);
+    
+    line.setPosition(e.getX(), 0);
+    line.setEndpoint(e.getX(), getHeight());
+    segment.setPosition(0, e.getY());
+    segment.setEndpoint(getWidth(), e.getY());
+    
+    
+    line.setLineWidth(1);
+    segment.setLineWidth(1);
+    removeAll(Line);
+    add(segment);
+    add(line);
+    add(ball);
+}
+
+function balls(e){
+    ball = new Circle(20);
+    ball.setPosition(e.getX(), e.getY());
+    ball.setColor(Color.red);
+    add(ball);
+}
