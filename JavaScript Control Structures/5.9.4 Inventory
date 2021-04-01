@@ -1,0 +1,19 @@
+var STARTING_NUM_ITEMS = 20;
+function start(){
+    var inventory = 20;
+    while (inventory > 0){
+        println ("We have " + inventory + " in stock. " );
+        
+        var buying  = readInt("How many would you like to buy? ");
+        
+        var total = inventory - buying;
+        
+        if(buying > inventory){
+            println("There is not enough inventory! ");
+        }else{
+            inventory-=buying;
+            println ("We have " + inventory+ "left.");
+        }
+    }
+    println("All out!");
+}
