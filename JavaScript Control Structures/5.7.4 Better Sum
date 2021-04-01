@@ -1,0 +1,11 @@
+function start(){
+ var one = readInt("What is the starting number?: ");
+ var two = readInt("What is the ending number?: ");
+ var total = 0;
+ for(var i = one; i <= two; i++)
+ {
+    total = total + i; 
+ }
+ println(total);
+    
+}
