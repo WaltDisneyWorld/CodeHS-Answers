@@ -1,0 +1,16 @@
+var INCHES_TO_CM = 2.54;
+var CM_TO_METERS = 0.01;
+var FEET_TO_INCHES = 12;
+
+function start(){
+	convertHeightToMeters(6,4);
+	
+}
+
+function convertHeightToMeters(x,y){
+    var totalInch = x * 12 + y;
+    var totalCm = totalInch * INCHES_TO_CM;
+    var totalM = totalCm * CM_TO_METERS;
+    
+    println(totalM);
+}
