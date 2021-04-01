@@ -1,0 +1,32 @@
+var STARTING_SIZE = getWidth();
+var MIN_SIZE = 5;
+var width = getWidth();
+var xPos = getWidth()/2;
+var yPos = getWidth()/2;
+
+function start() {
+	// Write your code here
+shapes();
+}
+
+
+function shapes(){
+    var i = 1;
+    while(width>=MIN_SIZE){
+        if(i%2==0){
+            var circle = new Circle(width/2);
+            circle.setPosition(xPos, yPos +40);
+            circle.setColor(Randomizer.nextColor());
+            add(circle);
+            width = width / Math.sqrt(2);
+            i++;
+        }else{
+            
+            var rect = new Rectangle(width, width);
+            rect.setPosition(xPos - width/2, yPos - width/2 +40);
+            rect.setColor(Randomizer.nextColor());
+            add(rect);
+            i++;
+        }
+    }
+}
