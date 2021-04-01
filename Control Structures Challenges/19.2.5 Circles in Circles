@@ -1,0 +1,16 @@
+var NUM_CIRCLES = 30;
+var BIG_RADIUS = 180;
+var i = 0;
+function start() {
+	// Write your code here
+    var radius = BIG_RADIUS;
+    var part = BIG_RADIUS/30;
+    while (i <= NUM_CIRCLES){
+        var circle = new Circle (radius);
+        circle.setPosition(getWidth()/2, getHeight()-radius);
+        circle.setColor(Randomizer.nextColor());
+        add(circle);
+        i++;
+        radius -= part;
+    }
+}
