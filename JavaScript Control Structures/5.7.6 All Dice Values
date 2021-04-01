@@ -1,0 +1,12 @@
+var SIDES_ON_DICE = 6;
+
+function start() {
+    
+    
+    for (var i = 1;  i <= SIDES_ON_DICE; i++){
+         
+         for( var n = 1; n <= SIDES_ON_DICE; n++){
+             println( i + ", " + n)
+         }
+    }	
+}
