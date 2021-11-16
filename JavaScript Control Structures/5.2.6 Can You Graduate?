@@ -1,6 +1,10 @@
 function start(){
-var enoughCredits= readBoolean(" HAve Credits?");
-var requirments = readBoolean("Do you meat the requirments?");
-var gradutae = enoughCredits && requirments; 
-println (" Can you graduate? "  +  gradutae);
+    var enoughCredits = readBoolean("Do you have enough Credits? ");
+	var reqs = readBoolean("Do you meet the requirements? ");
+	var graduation = (enoughCredits && reqs);
+	if(!enoughCredits && reqs){
+	    var graduation = false;
+	}
+	print ("Can you Graduate? " + graduation);
+
 }
