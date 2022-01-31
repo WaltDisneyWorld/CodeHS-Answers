@@ -3,30 +3,21 @@ var START_RADIUS = 1;
 var INCREMENT = 1;
 var CHANGE_COLORS_AT = 10;
 var circle;
+
 function start(){
-  drawCircle();
-  setTimer(expandCircle, 50);
-  
-}
-function drawCircle(){
+    //Circle is being added once in the start function.
     circle = new Circle(START_RADIUS);
-    var centerX = getWidth()/2;
-    var centerY = getHeight()/2;
-    circle.setPosition(centerX,centerY);
-    
+    circle.setPosition(getWidth()/2, getHeight()/2);
+    add(circle);
+
+    //This is the command that will execute every 50 miliseconds.
+    setTimer(grow, 5);
 }
 
-function expandCircle (){
-    var radii = 0;
-    var radiusNow = circle.getRadius();
-    if(radiusNow * 2<getHeight()){
-        radii = radiusNow + INCREMENT;
-        radiusNow = radii;
-        circle.setRadius(radiusNow);
-    }else{
-        stopTimer(expandCircle);
-    }
-    if (radiusNow % CHANGE_COLORS_AT == 0){
+function grow(){
+    START_RADIUS = START_RADIUS + INCREMENT;
+    circle.setRadius(START_RADIUS);
+    if(circle.getRadius() % CHANGE_COLORS_AT == 0){
         circle.setColor(Randomizer.nextColor());
     }
 }
